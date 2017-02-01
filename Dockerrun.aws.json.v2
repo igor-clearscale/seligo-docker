@@ -1,0 +1,32 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "tomcat-app",
+      "host": {
+        "sourcePath": "/var/app/current/webapps"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "tomcat",
+      "image": "312628085799.dkr.ecr.us-east-1.amazonaws.com/tomcat:latest",
+      "essential": true,
+      "memory": 1536,
+      "mountPoints": [
+        {
+          "sourceVolume": "tomcat-app",
+          "containerPath": "/usr/local/tomcat/webapps"
+        }
+      ],
+      "portMappings": [
+        {
+          "hostPort": 8080,
+          "containerPort": 8080
+        }
+      ]
+    }
+  ]
+}
+
