@@ -12,7 +12,6 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 
 EXPOSE 8080
 
-CMD /bin/bash -c "./bin/catalina.sh run \
-                  #while true; do sleep 100; done
-                 "
+CMD /bin/bash -c "./bin/catalina.sh run"; 
+    #while true; do sleep 100; done
 
