@@ -1,1 +1,0 @@
-# seligo-docker
